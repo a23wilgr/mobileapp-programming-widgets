@@ -3,7 +3,10 @@
 
 **Skriv din rapport här!**
 
-_Du kan ta bort all text som finns sedan tidigare_.
+Använt constraints för att positionera widgets. Widgets som använts är TextView, ImageView och button. 
+Även margin har använts för att ytterligare flytta på widgets. 
+I programkoden syns kod för knappen, där den är placerad till vänster om textView genom constraint_left, för att den ska hamna till höger om ImageView.
+Margin left har använts för att flytta knappen och ImageView i sidled. Top, right och bottom är constraint till parent för att knappen ska hamna i mitten av skärmen, men till höger om ImageView.
 
 ## Följande grundsyn gäller dugga-svar:
 
@@ -13,27 +16,27 @@ _Du kan ta bort all text som finns sedan tidigare_.
 - Svaret skall ha minst en skärmdump. Skärmdumpar skall illustrera exekvering av relevant programkod. Eventuell text i skärmdumpar måste vara läsbar.
 - I de fall detta efterfrågas, dela upp delar av ditt svar i för- och nackdelar. Dina för- respektive nackdelar skall vara i form av punktlistor med kortare stycken (3-4 meningar).
 
-Programkod ska se ut som exemplet nedan. Koden måste vara korrekt indenterad då den blir lättare att läsa vilket gör det lättare att hitta syntaktiska fel.
+Programkod för knapp
 
 ```
-function errorCallback(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            // Geolocation API stöds inte, gör något
-            break;
-        case error.POSITION_UNAVAILABLE:
-            // Misslyckat positionsanrop, gör något
-            break;
-        case error.UNKNOWN_ERROR:
-            // Okänt fel, gör något
-            break;
-    }
-}
+    <Button
+        android:id="@+id/button"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:text="Knapp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/imageView"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="60dp"
+        android:backgroundTint="#FF69B4"
+        android:textColor="#AAFF00"
+        />
 ```
 
-Bilder läggs i samma mapp som markdown-filen.
+Screenshot på resultat
 
-![](android.png)
+![](Screenshot_app.png)
 
 Läs gärna:
 
